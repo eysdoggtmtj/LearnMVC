@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <meta name="keywords" content="@ViewBag.Keywords">
+    <meta name="description" content="@ViewBag.Description">
+    <meta property="og:title" content="@ViewBag.Title" />
+    <meta property="og:description" content="@ViewBag.Description" />
+    <meta property="og:image" content="@(ViewBag.PublishSiteUrl + "/public/image/profile.jpg")" title="Enjoy Your Coding" alt="Eric Ping" />
+    <meta property="og:site_name" content="Eric Ping" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="@ViewBag.PageUrl" />
+    <meta property="og:locale" content="zh_tw" />
+    <meta property="fb:admins" content="100000357050609" />
+    @if (!ViewBag.IsDebug)
+    {
+        <base href="http://sudo.tw/">
+    }
+    <meta name="author" content="Eric Ping(王致平)">
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" href="~/public/image/profile.jpg" />
+    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/public/all.css">
+    <link rel="stylesheet" href="/public/custom.css">
+    <link href="~/public/code/shCore.css" rel="stylesheet" />
+    <link href="~/public/code/shCoreDefault.css" rel="stylesheet" />
+    <script src="/public/bundle.js"></script>
+    <script src="~/public/code/shCore.js"></script>
+    <script src="~/public/code/shMerge.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div id="header-container">
+            <a class="title" href="~/" itemscope itemtype="http://schema.org/Blog">
+                <h1 itemprop="name">Enjoy Your Coding</h1>
+            </a>
+            <nav class="menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                <ul>
+                    <li itemprop="name"><a itemprop="url" href="~/All">文章列表</a></li>
+                    <li itemprop="name"><a itemprop="url" href="https://about.me/eric.ping">關於作者</a></li>
+                    <li itemprop="name"><a itemprop="url" href="https://www.facebook.com/EricPingWang/">Facebook</a></li>
+                    <li itemprop="name"><a itemprop="url" href="http://www.slideshare.net/EricPingWang/">SlideShare</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div id="container">
+        <div id="welcome">
+            <h4>王致平 Eric Ping</h4>
+            <p>I am Developer, focusing on developing Web / iOS / Windows apps using JavaScript, Swift, C#</p>
+        </div>
+        <div id="layout">
+            <div id="blog-posts">
+                <div id="google-search">
+                    <script>
+                      (function() {
+                        var cx = '009759485821140490290:h-kymsfbpdw';
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                            '//cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:searchbox-only></gcse:searchbox-only>
+                </div>
+                @RenderBody()
+            </div>
+            @{Html.RenderAction("Sidebar", "Home", new { });}
+        </div>
+    </div>
+    <div id="footer">
+        <div class="center" itemscope itemtype="http://schema.org/Person">
+            Copyright© 2015 By <span itemprop="name"><a itemprop="url" href="https://www.facebook.com/EricPingWang" target="new">Eric Ping</a></span>
+        </div>
+    </div>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55c0c8d4106cc0c4" async="async"></script>    
+</body>
+
+</html>

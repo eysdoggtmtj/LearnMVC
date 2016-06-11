@@ -1,0 +1,8 @@
+﻿@media only screen and (min-width: 900px) {
+    #blog-posts > .post > .content > p {
+        /*min-width: 1000px;*/
+    }
+}
+
+@media only screen and (max-width: 900px) {
+}

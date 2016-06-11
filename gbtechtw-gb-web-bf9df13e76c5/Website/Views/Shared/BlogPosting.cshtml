@@ -1,0 +1,53 @@
+﻿@model ArticleViewModel
+@{
+    int i = 0;
+}
+<div class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="title">
+        <a itemprop="url" href="@Model.Url"><h2 itemprop="name headline">@Model.Title</h2></a>
+    </div>
+    <div class="content" itemprop="articleBody">
+        @Html.Raw(Model.Description)
+        @if (ViewBag.IsDetail != null)
+        {
+            @Html.Raw(Model.Content);
+        }
+    </div>
+    <div class="footer">
+        <div class="category">
+            @foreach (var category in Model.Categories)
+            {<a href="@category.Url">@category.Name</a>@((i++ != Model.Categories.Count - 1) ? ", " : "")}
+        </div>
+        <div class="author">
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person">Written By <span itemprop="name"><a itemprop="url" rel="author" href="https://www.facebook.com/EricPingWang">Eric Ping</a></span></span> On
+            <time datetime="@Model.CreatedTime.ToString("o")" itemprop="datePublished">@Model.CreatedTimeFormat</time>
+        </div>
+        @if (ViewBag.IsDetail == null)
+        {
+            <a class="readmore" href="@Model.Url">Read More</a>
+        }
+        else
+        {
+            <a class="readmore" href="~/">Back Home</a>
+        }
+        <img class="hide" src="~/public/image/profile.jpg" title="Enjoy Your Coding" alt="Eric Ping" itemprop="image" />
+    </div>
+</div>
+@if (ViewBag.IsDetail != null)
+{
+    <div class="post">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'enjoyyourcoding';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+    </div>
+}

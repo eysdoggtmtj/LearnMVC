@@ -1,0 +1,25 @@
+﻿@model SidebarViewModel
+<div id="sidebar">
+    <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <h3>Categories</h3>
+        <ul>
+            @foreach (var category in Model.Categories)
+            {
+                <li itemprop="name">
+                    <a itemprop="url" href="@category.Url">@category.Name</a>
+                </li>
+            }
+        </ul>
+    </nav>
+    <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <h3>Archives</h3>
+        <ul>
+            @foreach (var archive in Model.Archives)
+            {
+                <li itemprop="name">
+                    <a itemprop="url" href="@archive.Url">@archive.Name</a>
+                </li>
+            }
+        </ul>
+    </nav>
+</div>
