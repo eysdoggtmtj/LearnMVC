@@ -96,16 +96,22 @@
     <Compile Include="Migrations\201606071538285_InitialChange.Designer.cs">
       <DependentUpon>201606071538285_InitialChange.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606090811145_AddStoreTable.cs" />
+    <Compile Include="Migrations\201606090811145_AddStoreTable.Designer.cs">
+      <DependentUpon>201606090811145_AddStoreTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\ArticleCategoryMapping.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\Store.cs" />
     <Compile Include="Models\_BaseModel.cs" />
     <Compile Include="DAL\BlogDataInitializer.cs" />
     <Compile Include="DAL\ApplicationDbContext.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Keyword.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\StoreService.cs" />
     <Compile Include="Services\CategoryService.cs" />
     <Compile Include="Services\ArticleService.cs" />
     <Compile Include="Services\_BaseService.cs" />
@@ -124,6 +130,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201606071538285_InitialChange.resx">
       <DependentUpon>201606071538285_InitialChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606090811145_AddStoreTable.resx">
+      <DependentUpon>201606090811145_AddStoreTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

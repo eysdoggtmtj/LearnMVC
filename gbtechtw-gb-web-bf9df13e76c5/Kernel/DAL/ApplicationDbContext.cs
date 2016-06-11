@@ -14,7 +14,9 @@ namespace Kernel.DAL
 
         public virtual DbSet<Category> Categories { get; set; }
 
-        public virtual DbSet<Keyword> Keywords { get; set; }        
+        public virtual DbSet<Keyword> Keywords { get; set; }
+
+        public virtual DbSet<Store> Stores { get; set; }
 
         public virtual DbSet<ArticleCategoryMapping> ArticleCategoryMapping { get; set; }
 

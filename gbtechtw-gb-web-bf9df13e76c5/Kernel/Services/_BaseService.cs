@@ -30,30 +30,21 @@
 
         public void Create(TEntity model)
         {
-            using (var transaction = this.GetTransaction())
-            {
                 this.unitOfWork.repository.Insert(model);
-                this.unitOfWork.Commit();
-            }
+
         }
 
         public void Update(TEntity model)
         {
-            using (var transaction = this.GetTransaction())
-            {
                 this.unitOfWork.repository.Update(model);
-                this.unitOfWork.Commit();
-            }
+                this.unitOfWork.Commit();            
         }
 
 
         public void Delete(TEntity model)
         {
-            using (var transaction = this.GetTransaction())
-            {
                 this.unitOfWork.repository.Delete(model);
                 this.unitOfWork.Commit();
-            }
         }
     }
 }
