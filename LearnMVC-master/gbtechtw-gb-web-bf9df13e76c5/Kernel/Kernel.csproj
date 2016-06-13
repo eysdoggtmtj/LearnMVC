@@ -100,10 +100,20 @@
     <Compile Include="Migrations\201606090811145_AddStoreTable.Designer.cs">
       <DependentUpon>201606090811145_AddStoreTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606131154166_AddMyClassTable.cs" />
+    <Compile Include="Migrations\201606131154166_AddMyClassTable.Designer.cs">
+      <DependentUpon>201606131154166_AddMyClassTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606131204252_AddMyArticleTable.cs" />
+    <Compile Include="Migrations\201606131204252_AddMyArticleTable.Designer.cs">
+      <DependentUpon>201606131204252_AddMyArticleTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\ArticleCategoryMapping.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\MyArticle.cs" />
+    <Compile Include="Models\MyClass.cs" />
     <Compile Include="Models\Store.cs" />
     <Compile Include="Models\_BaseModel.cs" />
     <Compile Include="DAL\BlogDataInitializer.cs" />
@@ -111,6 +121,8 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Keyword.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\MyArticleService.cs" />
+    <Compile Include="Services\MyClassService.cs" />
     <Compile Include="Services\StoreService.cs" />
     <Compile Include="Services\CategoryService.cs" />
     <Compile Include="Services\ArticleService.cs" />
@@ -133,6 +145,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606090811145_AddStoreTable.resx">
       <DependentUpon>201606090811145_AddStoreTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606131154166_AddMyClassTable.resx">
+      <DependentUpon>201606131154166_AddMyClassTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606131204252_AddMyArticleTable.resx">
+      <DependentUpon>201606131204252_AddMyArticleTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

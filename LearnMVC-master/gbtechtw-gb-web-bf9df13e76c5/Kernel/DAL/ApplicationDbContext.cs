@@ -18,6 +18,8 @@ namespace Kernel.DAL
 
         public virtual DbSet<Store> Stores { get; set; }
 
+        public virtual DbSet<MyClass> MyClasss { get; set; }
+
         public virtual DbSet<ArticleCategoryMapping> ArticleCategoryMapping { get; set; }
 
         public ApplicationDbContext()

@@ -12,7 +12,7 @@
     using System.Web;
     using System.Web.Mvc;
     using System.Web.Routing;
-
+    using Kernel.Migrations;
     public class HomeController : BaseController
     {
 
@@ -22,18 +22,19 @@
 
         }
 
-        public ActionResult Index()
+        /*
+         * public ActionResult Index()
         {
             using (var transaction = this.StoreService.GetTransaction())
             {
                 var store = new Store { Name = "MR.COFFEE2", Latitude = 16, Longitude = 38 };
                 this.StoreService.Create(store);
-                //throw new Exception("TEST");
                 transaction.Commit();
 
             }
             return this.ReturnJson(this.StoreService.GetQuery().ToList());
         }
+        */
 
     }
 }

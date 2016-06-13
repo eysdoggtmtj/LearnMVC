@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Kernel.Models.MyArticle>
+@{
+    ViewBag.Title = "文章列表";
+}
+
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <table class="table" id="MyTable">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MyClass)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedTime)
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+            {
+            <tr>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MyClass)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedTime)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</body>
+</html>
