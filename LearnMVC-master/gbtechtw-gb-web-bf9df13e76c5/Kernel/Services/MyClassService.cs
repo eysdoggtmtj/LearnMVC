@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Kernel.Services
 {
-    public class MyClassService : _BaseService<Store>
+    public class MyClassService : _BaseService<MyClass>
     {
         public MyClassService(ApplicationDbContext context) : base(context)
         {

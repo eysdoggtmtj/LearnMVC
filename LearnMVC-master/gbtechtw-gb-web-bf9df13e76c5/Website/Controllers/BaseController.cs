@@ -14,13 +14,15 @@
 
     public abstract class BaseController : Controller
     {
-        public StoreService StoreService;
+        public MyClassService MyClassService;
+        public MyArticleService MyArticleService;
 
         protected override void Initialize(RequestContext requestContext)
         {
             base.Initialize(requestContext);
             var dbContert = new ApplicationDbContext();
-            this.StoreService = new StoreService(dbContert);
+            this.MyClassService = new MyClassService(dbContert);
+            this.MyArticleService = new MyArticleService(dbContert);
         }
 
         protected JsonResult ReturnJson(object obj, bool success = true, object ErrorMessage = null, object error = null)

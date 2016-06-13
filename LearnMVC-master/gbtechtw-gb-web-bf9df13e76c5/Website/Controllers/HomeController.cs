@@ -13,6 +13,10 @@
     using System.Web.Mvc;
     using System.Web.Routing;
     using Kernel.Migrations;
+    using System.Xml.Linq;
+    using System.EnterpriseServices;
+    using System.Security.Claims;
+    using System.Data.Entity;
     public class HomeController : BaseController
     {
 
@@ -22,19 +26,20 @@
 
         }
 
-        /*
-         * public ActionResult Index()
+        public ActionResult Index()
         {
-            using (var transaction = this.StoreService.GetTransaction())
+            using (var transaction = this.MyClassService.GetTransaction())
             {
-                var store = new Store { Name = "MR.COFFEE2", Latitude = 16, Longitude = 38 };
-                this.StoreService.Create(store);
+                var myClass = new MyClass { Name = "TestClass" };
+
+                MyArticle TestArticle1 = new MyArticle { Title = "TestArticle1", Content = "TEST", MyClassId = myClass.Id };
+                myClass.MyArticles = new List<MyArticle>();
+                myClass.MyArticles.Add(TestArticle1);
+                this.MyClassService.Create(myClass);
+
                 transaction.Commit();
-
             }
-            return this.ReturnJson(this.StoreService.GetQuery().ToList());
+            return this.ReturnJson(this.MyClassService.GetQuery().Include(q=>q.MyArticles).ToList().Select(q=>new MyClassViewModel(q)));
         }
-        */
-
     }
 }
